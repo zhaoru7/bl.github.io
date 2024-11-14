@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎访问</title>
+    <style>
+        *{margin: 0;padding: 0;}
+    </style>
+</head>
+<body>
+    <div style="width: 100%;max-width: 800px;margin: 0 auto; ">
+        <img src="static/picture/0.jpg" alt="" style="display: block;width: 100%;">
+        <p class="copywx" style="display: block;width: 90%;height: 40px;margin: 10px auto;background-color: rgb(9, 209, 199);border-radius: 50px;text-align: center;font-size: 22px;line-height: 35px;text-decoration: none;color: mintcream;color: black;">点击复制QQ群：808264840</p>
+        <img src="static/picture/1.jpg" alt="" style="display: block;width: 100%;">
+        <img src="static/picture/2.jpg" alt="" style="display: block;width: 100%;">
+        <p class="copywx2" style="display: block;width: 90%;height: 40px;margin: 10px auto;background-color: rgb(9, 209, 199);border-radius: 50px;text-align: center;font-size: 22px;line-height: 35px;text-decoration: none;color: mintcream;color: black;">复制备用QQ群：<span id="wx2">577470412</span></p>
+        <img src="static/picture/3.jpg" alt="" style="display: block;width: 100%;">
+        <img src="static/picture/4.jpg" alt="" style="display: block;width: 100%;">
+        <p style="margin: 20px auto 80px;text-align: center;color: gray;">技术支持：tg12567</p>
+        <div style="position: fixed;bottom: 0; width: 100%;height: 60px;max-width:800px;margin: 0 auto;">
+            <p class="copywx" style="display: block;width: 90%;height: 40px;margin: 10px auto;background-color: rgb(9, 209, 199);border-radius: 50px;text-align: center;font-size: 22px;line-height: 35px;text-decoration: none;color: mintcream;color: black;">点击复制QQ群:<span id="wx">808264840</span></p>
+    </div>
+    </div>
+
+    <!--引入一个jquery-->
+<script src="static/js/jquery.js"></script>
+
+
+<script>
+
+function copy(id,text){
+        const range = document.createRange();
+        range.selectNode(document.getElementById(id));
+
+        const selection = window.getSelection();
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        selection.addRange(range);
+		setTimeout(function () {
+			$('.zhezao').show();
+			$('.tanchuang').show();
+		},1000)
+        document.execCommand('copy');alert(text); 
+}  //id 是要复制的 元素id   text 是要显示的名字
+
+	$(function () {
+	
+		$('.copywx').click(function () {  //点击位置的 class
+		copy('wx','已复制好，请在QQ粘贴使用'); //拷贝文本的id 显示的文字
+		})
+
+	 	$('.close').click(function () {	    	
+	  	})
+	})
+    $(function () {
+	
+    $('.copywx2').click(function () {  //点击位置的 class
+    copy('wx2','已复制好，请在QQ粘贴使用'); //拷贝文本的id 显示的文字
+    })
+
+     $('.close').click(function () {	    	
+      })
+})
+
+
+</script>
+</body>
+</html>
